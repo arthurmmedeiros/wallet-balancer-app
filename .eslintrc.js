@@ -39,6 +39,8 @@ module.exports = {
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
-      'import/prefer-default-export': 'off'
+      'import/prefer-default-export': 'off',
+      'react/prop-types': 'off',
+      'react/jsx-props-no-spreading': 'off'
     },
   };

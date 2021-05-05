@@ -1,11 +1,10 @@
 import { Reducer } from 'redux';
-import { stocksTest } from '../TestData/Stocks';
+import { clone } from 'lodash';
 import { WalletActions, WalletActionTypes } from './Actions';
 import { IWalletStore } from './Types';
 
 const INITIAL_STATE: IWalletStore = {
-    stocks: stocksTest,
-    loading: false,
+    stocks: undefined,
 };
 
 const reducer: Reducer<IWalletStore, WalletActionTypes> = (
@@ -14,7 +13,20 @@ const reducer: Reducer<IWalletStore, WalletActionTypes> = (
 ) => {
     switch (action.type) {
         case WalletActions.AddStock: {
-            return { ...state };
+            const clonedStocks = clone(state.stocks);
+            return {
+                ...state,
+                stocks:
+                    clonedStocks === undefined
+                        ? [action.payload]
+                        : [...clonedStocks, action.payload],
+            };
+        }
+        case WalletActions.LoadStocks: {
+            return {
+                ...state,
+                stocks: action.payload,
+            };
         }
         default:
             return state;
