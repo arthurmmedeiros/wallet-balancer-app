@@ -1,11 +1,11 @@
-import { IAddStock } from "../Stock/Types";
+import { IAddStock } from '../Stock/Types';
 
 export enum WalletActions {
     AddStock = '@wallet/add/stock',
 }
 
 export interface AddStockRequestAction {
-    type: typeof WalletActions.AddStock,
+    type: typeof WalletActions.AddStock;
     payload: IAddStock;
 }
 

@@ -1,5 +1,5 @@
-import {WalletActionTypes} from './Wallet/Actions';
+import { WalletActionTypes } from './Wallet/Actions';
 
-type ActionTypes =  WalletActionTypes;
+type ActionTypes = WalletActionTypes;
 
 export default ActionTypes;

@@ -1,28 +1,40 @@
-import {FC, useState} from 'react';
+import { useState } from 'react';
 import './TableItem.scss';
 
 interface ITableItem {
     value: number | string | undefined;
-    onChange?: () => void;    
+    onChange?: () => void;
     isNew?: boolean;
 }
 
-const TableItem: FC<ITableItem> = ({
-    value,
-    onChange,
-    isNew
-}) => {
+const TableItem = ({ value, onChange, isNew }: ITableItem) => {
     const [editMode, setEditMode] = useState(isNew || false);
-    
-    return(
-        <>
-        {editMode 
-            ? <input className='form-control table-item-input-sm'/>
-            : <div className='table-item-text' onClick={() => {setEditMode(true)}}>{value}</div>
-        }
-        </>
-    )
 
-}
+    return (
+        <>
+            {editMode ? (
+                <input className="form-control table-item-input-sm" />
+            ) : (
+                <div
+                    className="table-item-text"
+                    role="presentation"
+                    onClick={() => {
+                        setEditMode(true);
+                    }}
+                    onBlur={() => {
+                        /** */
+                    }}
+                >
+                    {value}
+                </div>
+            )}
+        </>
+    );
+};
+
+TableItem.defaultProps = {
+    onChange: undefined,
+    isNew: undefined,
+};
 
 export default TableItem;

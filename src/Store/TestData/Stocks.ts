@@ -1,7 +1,7 @@
-import { IStock } from "../Stock/Types";
+import { IStock } from '../Stock/Types';
 
 export const stocksTest = [
-    {   
+    {
         name: 'ABEV3',
         price: 12,
         quantity: 5,
@@ -10,9 +10,9 @@ export const stocksTest = [
         idealPercentInWallet: 35,
         idealTotalInWallet: 25,
         shouldBuy: 30,
-        shouldBuyUnity: 4
+        shouldBuyUnity: 4,
     },
-    {   
+    {
         name: 'LREN3',
         price: 12,
         quantity: 5,
@@ -21,9 +21,9 @@ export const stocksTest = [
         idealPercentInWallet: 35,
         idealTotalInWallet: 25,
         shouldBuy: 30,
-        shouldBuyUnity: 4
+        shouldBuyUnity: 4,
     },
-    {   
+    {
         name: 'BIDI4',
         price: 12,
         quantity: 5,
@@ -32,6 +32,6 @@ export const stocksTest = [
         idealPercentInWallet: 35,
         idealTotalInWallet: 25,
         shouldBuy: 30,
-        shouldBuyUnity: 4
-    }
-] as IStock [];
+        shouldBuyUnity: 4,
+    },
+] as IStock[];

@@ -1,4 +1,4 @@
-export interface IStock{
+export interface IStock {
     name: string;
     quantity: number;
     price: number;
